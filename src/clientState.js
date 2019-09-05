@@ -1,5 +1,12 @@
 export const defaults = {
-  notes: []
+  notes: [
+    {
+      __typename: "Note",
+      id: 1,
+      title: "First Note",
+      contents: "tired"
+    }
+  ]
 };
 export const typeDefs = [
   `
@@ -22,4 +29,12 @@ export const typeDefs = [
     `
 ];
 
-export const resolvers = {};
+export const resolvers = {
+  Query: {
+    note: (_, variables, { getCacheKey }) => {
+      const id = getCacheKey({ __typename: "Note", id: variables.id });
+      console.log(id);
+      return null;
+    }
+  }
+};
