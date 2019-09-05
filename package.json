@@ -3,9 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link-state": "^0.4.2",
+    "graphql": "^14.5.4",
+    "graphql-tag": "^2.10.1",
     "react": "^16.9.0",
+    "react-apollo": "^3.0.1",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.1.1",
+    "react-textarea-autosize": "^7.1.0",
+    "styled-components": "^4.3.2",
+    "styled-reset": "^4.0.0",
+    "yarn": "^1.17.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Make Offline Notes with GraphQL + React  . . .",
+  "main": "index.js",
+  "repository": "https://github.com/KIMJUNSICK/Offiline-notes.git",
+  "author": "Kim Jun Sik <jinaganda5@gmail.com>",
+  "license": "MIT"
 }
