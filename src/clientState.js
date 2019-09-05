@@ -3,11 +3,10 @@ export const defaults = {
 };
 export const typeDefs = [
   `
-    schema {
-        query:Query
-        mutation:Mutation
+    extend schema {
+        mutation: Mutation
     }
-    type Query {
+    extend type Query {
         note(id:Int!):Note
         notes: [Note]!
     }
@@ -22,4 +21,5 @@ export const typeDefs = [
     }
     `
 ];
+
 export const resolvers = {};
