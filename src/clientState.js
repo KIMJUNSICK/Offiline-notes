@@ -1,10 +1,10 @@
 import { NOTE_FRAGMENT } from "./fragments";
+import { GET_NOTES } from "./queries";
 
 export const defaults = {
   notes: [
     {
       __typename: "Note",
-      key: 1,
       id: 1,
       title: "First Note",
       content: "tired"
@@ -41,6 +41,24 @@ export const resolvers = {
       });
       const note = cache.readFragment({ fragment: NOTE_FRAGMENT, id });
       return note;
+    }
+  },
+  Mutation: {
+    createNote: (_, args, { cache }) => {
+      const { notes } = cache.readQuery({ query: GET_NOTES });
+      const { title, content } = args;
+      const newNote = {
+        __typename: "Note",
+        title,
+        content,
+        id: notes.length + 1
+      };
+      cache.writeData({
+        data: {
+          notes: [newNote, ...notes]
+        }
+      });
+      return newNote;
     }
   }
 };
