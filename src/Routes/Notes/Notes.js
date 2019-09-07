@@ -78,7 +78,7 @@ class NotesContainer extends React.Component {
             {({ data }) =>
               data.notes
                 ? data.notes.map(note => (
-                    <Link to={`/note/${note.id}`}>
+                    <Link to={`/note/${note.id}`} key={note.id}>
                       <Note>
                         <NoteTitle>{note.title}</NoteTitle>
                       </Note>
