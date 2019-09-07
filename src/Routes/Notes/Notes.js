@@ -73,17 +73,21 @@ class NotesContainer extends React.Component {
           </Title>
           <SubTitle>Taking notes while we learn.</SubTitle>
         </Header>
-        <Query query={GET_NOTES}>
-          {({ data }) =>
-            data.notes
-              ? data.notes.map(note => (
-                  <Link to={`/edit/${note.id}`}>
-                    <Note>{note.title}</Note>
-                  </Link>
-                ))
-              : null
-          }
-        </Query>
+        <Notes>
+          <Query query={GET_NOTES}>
+            {({ data }) =>
+              data.notes
+                ? data.notes.map(note => (
+                    <Link to={`/note/${note.id}`}>
+                      <Note>
+                        <NoteTitle>{note.title}</NoteTitle>
+                      </Note>
+                    </Link>
+                  ))
+                : null
+            }
+          </Query>
+        </Notes>
       </>
     );
   }
