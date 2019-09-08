@@ -13,7 +13,7 @@ class App extends Component {
           <Route exact={true} path={"/"} component={Notes} />
           <Route path={"/add"} component={Add} />
           <Route path={"/note/:id"} component={Note} />
-          <Route path-={"/edit/:id"} component={Edit} />
+          <Route path={"/edit/:id"} component={Edit} />
         </Switch>
       </BrowserRouter>
     );
